@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(to top, #fff0f6, #fff);
+      font-family: 'Great Vibes', cursive;
+      color: #d6336c;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .hearts, .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .heart, .star {
+      position: absolute;
+      width: 20px; height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+
+    .heart::before, .heart::after,
+    .star::before, .star::after {
+      content: '';
+      position: absolute;
+      width: 20px; height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before, .star::before { top: -10px; left: 0; }
+    .heart::after, .star::after { left: -10px; top: 0; }
+
+    .star {
+      background: yellow;
+      border-radius: 50%;
+      width: 10px; height: 10px;
+      transform: rotate(0);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff6f91, 0 0 20px #ff6f91; }
+      to   { text-shadow: 0 0 20px #ff3e6c, 0 0 30px #ff3e6c; }
+    }
+
+    .typewriter {
+      font-size: 1.5rem;
+      border-right: 2px solid #d6336c;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 5s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .section {
+      min-height: 100vh;
+      padding: 3rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      animation: wobble 1.2s ease;
+    }
+
+    @keyframes wobble {
+      0% { transform: translateY(30px) rotate(-1deg); }
+      50% { transform: translateY(-5px) rotate(1deg); }
+      100% { transform: translateY(0); }
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+
+    .surprise-btn {
+      margin-top: 2rem;
+      padding: 0.7rem 2rem;
+      background: #ff6f91;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 #ff6f91aa; }
+      70% { transform: scale(1.1); box-shadow: 0 0 10px 20px transparent; }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 transparent; }
+    }
+
+    .hidden-message {
+      display: none;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      color: #ff3e6c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+  <div class="stars" id="stars"></div>
+
+  <!-- Hero -->
+  <div class="container">
+    <h1>Hallo Bente</h1>
+    <div class="typewriter" id="message"></div>
+  </div>
+
+  <!-- Sections -->
+  <section class="section" id="section1">
+    <h2>Mijn Blijheid</h2>
+    <p>Wanneer ik met jou praat of jou zie ben ik gelijk veel blijer dan eerst. 💖</p>
+  </section>
+
+  <section class="section" id="section2">
+    <h2>Mijn Herinnering</h2>
+    <p>Toen ik jou voor het eerst zag vond ik je gelijk al leuk. Helaas duurde het wel lang voordat ik iets durfde te zeggen daarover tegen je maar het is gelukkig wel goed gekomen. 💖</p>
+  </section>
+
+  <section class="section" id="section3">
+    <h2>Mijn Geluk</h2>
+    <p>Ik heb mega veel geluk met jou en ik ben daar heel dankbaar voor. 💖</p>
+  </section>
+
+  <section class="section" id="section4">
+    <h2>Mijn Belofte</h2>
+    <p>Ik zal je altijd respecteren en nooit liegen tegen jou. 💖</p>
+  </section>
+
+  <section class="section" id="section5">
+    <h2>Een Laatste Dingetje...</h2>
+    <button class="surprise-btn" onclick="showSurprise()">Click Deze Knop 💌</button>
+    <div class="hidden-message" id="hiddenMessage">Pssttt ik hou misschien heel veel van je, maar vertel het niet door hé. 🤫</div>
+  </section>
+
+  <footer>Gemaakt met liefde ❤️ speciaal voor jou!</footer>
+
+  <script>
+    // Typewriter
+    const message = "Ik geef heel veel om je Bente. 🥰";
+    const el = document.getElementById("message");
+    let index = 0;
+    function type() {
+      if (index < message.length) {
+        el.innerHTML += message.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    type();
+
+    // Floating hearts
+    const hearts = document.getElementById("hearts");
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+      hearts.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+
+    // Floating stars
+    const stars = document.getElementById("stars");
+    function createStar() {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (3 + Math.random() * 4) + "s";
+      stars.appendChild(star);
+      setTimeout(() => star.remove(), 7000);
+    }
+    setInterval(createStar, 600);
+
+    // Scroll animation
+    const sections = document.querySelectorAll('.section');
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Surprise
+    function showSurprise() {
+      document.getElementById('hiddenMessage').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
